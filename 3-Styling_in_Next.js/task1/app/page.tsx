@@ -5,6 +5,7 @@ import Button from './components/Button';
 import Card from './components/Card';
 import AppLayout from './components/AppLayout';
 import Alert from './components/Alert';
+import ProfileCard from './components/ProfileCard';
 
 export default function Home() {
   const handleClick = () => {
@@ -36,10 +37,32 @@ export default function Home() {
           content="This card's background is orange" 
           bgColor="#ffedd5" 
         />
-        
+
         <Alert 
           message="Alert!" 
         />
+
+        <div className="flex flex-wrap gap-8 justify-center mt-10">
+        
+        <ProfileCard 
+          name="John Doe" 
+          role="Frontend Developer" 
+          accentColor="#3b82f6" 
+        />
+
+        <ProfileCard 
+          name="Jane Doe" 
+          role="FullStack Developer" 
+          accentColor="#a855f7" 
+        />
+
+        <ProfileCard 
+          name="Donald Duck" 
+          role="UX Designer" 
+          accentColor="#f97316" 
+        />
+        
+      </div>
       </main>
     </AppLayout>
   );
