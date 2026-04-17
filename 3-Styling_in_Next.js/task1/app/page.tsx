@@ -4,6 +4,7 @@ import Title from './components/Title';
 import Button from './components/Button';
 import Card from './components/Card';
 import AppLayout from './components/AppLayout';
+import Alert from './components/Alert';
 
 export default function Home() {
   const handleClick = () => {
@@ -34,6 +35,10 @@ export default function Home() {
           title="Orange Card" 
           content="This card's background is orange" 
           bgColor="#ffedd5" 
+        />
+        
+        <Alert 
+          message="Alert!" 
         />
       </main>
     </AppLayout>
