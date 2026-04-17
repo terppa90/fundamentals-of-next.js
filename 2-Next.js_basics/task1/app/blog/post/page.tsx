@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import styles from '../../home.module.css';
 
 export default function BlogPost() {
@@ -10,12 +9,6 @@ export default function BlogPost() {
         This is a nested page inside the blog directory. 
         It demonstrates how Next.js handles multi-level routing.
       </p>
-      
-      <div>
-        <Link href="/" className="text-blue-500 hover:underline">
-          Back to Home
-        </Link>
-      </div>
     </main>
   );
 }
