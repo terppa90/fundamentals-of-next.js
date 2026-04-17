@@ -3,6 +3,7 @@ import styles from './home.module.css';
 import Title from './components/Title';
 import Button from './components/Button';
 import Card from './components/Card';
+import AppLayout from './components/AppLayout';
 
 export default function Home() {
   const handleClick = () => {
@@ -10,29 +11,31 @@ export default function Home() {
   };
   
   return (
-    <main className={styles.container}>
-      <Title text="Fundamentals of Next.js" />
-      <p className={styles.description}>This is an application for studying Next.js</p>
+    <AppLayout>
+      <main className={styles.container}>
+        <Title text="Fundamentals of Next.js" />
+        <p className={styles.description}>This is an application for studying Next.js</p>
 
-      <Button label="Click Me!" onClick={handleClick} />
-      
-      <Card 
-        title="Blue Card" 
-        content="This card's background is blue" 
-        bgColor="#dbeafe" 
-      />
+        <Button label="Click Me!" onClick={handleClick} />
+        
+        <Card 
+          title="Blue Card" 
+          content="This card's background is blue" 
+          bgColor="#dbeafe" 
+        />
 
-      <Card 
-        title="Green Card" 
-        content="This card's background is green" 
-        bgColor="#dcfce7" 
-      />
+        <Card 
+          title="Green Card" 
+          content="This card's background is green" 
+          bgColor="#dcfce7" 
+        />
 
-      <Card 
-        title="Orange Card" 
-        content="This card's background is orange" 
-        bgColor="#ffedd5" 
-      />
-    </main>
+        <Card 
+          title="Orange Card" 
+          content="This card's background is orange" 
+          bgColor="#ffedd5" 
+        />
+      </main>
+    </AppLayout>
   );
 }
