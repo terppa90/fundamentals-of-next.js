@@ -22,8 +22,6 @@ export async function POST(req) {
             return NextResponse.json({ error: 'Message is required' }, { status: 400 });
         }
 
-        console.log("Uusi yhteydenotto:", { name, message });
-
         // Success response
         return NextResponse.json(
             { 
