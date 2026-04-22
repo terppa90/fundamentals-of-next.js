@@ -1,7 +1,15 @@
 import { NextResponse } from 'next/server';
 
+function isAuthenticated(req) {
+  return req.headers.get('authorization') === 'Bearer token123';
+}
+
 export async function POST(req) {
     try {
+        if (!isAuthenticated(req)) {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
+
         // Luetaan JSON-data
         const body = await req.json();
         const { name, message } = body;
@@ -22,7 +30,7 @@ export async function POST(req) {
             message: "Kiitos viestistäsi! Se on vastaanotettu.",
             receivedData: { name, message } 
             }, 
-            { status: 200 } // OK
+            { status: 201 } // Created
         );
 
     } catch (error) {
