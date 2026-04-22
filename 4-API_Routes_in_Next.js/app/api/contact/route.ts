@@ -6,6 +6,14 @@ export async function POST(req) {
         const body = await req.json();
         const { name, message } = body;
 
+        if (!body.name) {
+            return NextResponse.json({ error: 'Name is required' }, { status: 400 });
+        }
+
+        if (!body.message) {
+            return NextResponse.json({ error: 'Message is required' }, { status: 400 });
+        }
+
         console.log("Uusi yhteydenotto:", { name, message });
 
         // Success response
