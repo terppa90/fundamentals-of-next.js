@@ -1,4 +1,15 @@
 export default async function ProfilePage() {
+    console.log('Rendering profile on server: ' + new Date().toISOString());
+
+    /*
+    Logitus näkyy vain palvelimella. Selaimen kehittäjätyökalujen (F12) console välilehdellä 
+    ei näy mitään. Tämä todistaa, että koodi ajetaan 100-prosenttisesti palvelimella.
+
+    Koska käytössä on { cache: 'no-store' }, logi ilmestyy terminaaliin jokaisella sivun latauksella. 
+    Ilman no-storea logitusta ei näkyisi enää uudelleen, koska sivu tarjoillaan valmiina 
+    välimuistista.
+    */
+
     const response = await fetch('https://jsonplaceholder.typicode.com/users/1', {
         cache: 'no-store'
     });
