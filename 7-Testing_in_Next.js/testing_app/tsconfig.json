@@ -30,6 +30,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "jest.setup.js"
-  ],
+, "__tests__/utils.test.js"  ],
   "exclude": ["node_modules"]
 }
