@@ -3,7 +3,7 @@
 import { useTheme } from '../contexts/ThemeContext';
 import Link from "next/link";
 import Image from 'next/image';
-import code from '../../public/code.jpg';
+import Script from 'next/script';
 
 export default function AboutPage() {
     const { theme } = useTheme();
@@ -42,6 +42,12 @@ export default function AboutPage() {
                         priority
                     />
                 </div>
+
+                <Script 
+                    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
+                    strategy="afterInteractive"
+                    onLoad={() => console.log('JQuery ladattu onnistuneesti!')}
+                />
 
                 <div className="mt-12 pt-8 border-t border-gray-500/20">
                     <Link 
